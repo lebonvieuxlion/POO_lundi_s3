@@ -52,7 +52,7 @@ class Event																				#définition de la classe
 
 	def is_soon
 
-		if  @start_date - 30 * 60 < Time.now
+		if  @start_date - 30 * 60 < Time.now					#check si l'évènement est à moins de 30 min du début de la date de début
 
 			return true
 
@@ -65,7 +65,7 @@ class Event																				#définition de la classe
 
 	def to_s
 
-		attendees_to_s = @attendees.join(", ")
+		attendees_to_s = @attendees.join(", ")					#Appelée sur une instance de classe elle permet de formater en string les informations sur cette dernière
 
 		puts "Titre : #{@title}"
 		puts "Date de début : #{@start_date}"
@@ -74,11 +74,9 @@ class Event																				#définition de la classe
 
 	end
 
-
+Binding.pry
 
 
 end
 
-
-#puts Time.parse("2010-10-31 12:00")
 

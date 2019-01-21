@@ -29,15 +29,56 @@ class Event																				#définition de la classe
 
 	end
 
+	def is_past																			#vérifie à l'aide d'une condition if si l'évènement est passé
+																						#et renvoie true si c'est le cas
+		if @start_date < Time.now
+
+			return true
+
+		else 
+			false
+
+		end
+
+	end
 
 
+	def is_future												#on invoque l'inverse la fonction is_past grâce au point d'exclamation car elle elle
+																#est l'exact inverse cette dernière
+		!self.is_past
+
+	end
+
+
+	def is_soon
+
+		if  @start_date - 30 * 60 < Time.now
+
+			return true
+
+		else
+
+			false
+		end
+	end
+
+
+	def to_s
+
+		attendees_to_s = @attendees.join(", ")
+
+		puts "Titre : #{@title}"
+		puts "Date de début : #{@start_date}"
+		puts "Durée : #{@length} minutes"
+		puts "Invités : #{attendees_to_s}"
+
+	end
 
 
 
 
 end
 
-Binding.pry
 
 #puts Time.parse("2010-10-31 12:00")
 
